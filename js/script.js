@@ -35,10 +35,12 @@ const handleFormSubmit = async (e) => {
   e.preventDefault();
 
   try {
+    // Get selected dates
     const selectedDates = Array.from(document.querySelectorAll('.w-checkbox-input'))
       .filter(checkbox => checkbox.checked)
       .map(checkbox => checkbox.nextElementSibling.innerText)
 
+    // Get formData
     const formData = {
       first_name: e.target['first_name'] ? e.target['first_name'].value ?? null : null,
       last_name: e.target['last_name'] ? e.target['last_name'].value ?? null : null,
@@ -50,14 +52,17 @@ const handleFormSubmit = async (e) => {
     await sendEmail(formData);
     console.log(formData);
 
+    // Reset form 
     e.target.reset();
   } catch (error) {
     console.error(error);
+    // Reset form 
+    e.target.reset();
   }
 };
 
 const sendEmail = async (formData) => {
-  // Define your email parameters
+  // email parameters
   const templateParams = {
     first_name: formData.first_name,
     last_name: formData.last_name,
@@ -67,7 +72,7 @@ const sendEmail = async (formData) => {
   };
 
   try {
-    // Send the email via EmailJS
+    // Sending the email via EmailJS
     await emailjs.send('service_cfecbbp', 'template_qpkpr8u', templateParams);
   } catch (error) {
     console.error('Error sending email:', error);
