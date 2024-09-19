@@ -29,3 +29,47 @@ const countdownTimer = setInterval(function () {
     document.getElementById("timer").innerHTML = "EXPIRED";
   }
 }, 1000);
+
+
+const handleFormSubmit = async (e) => {
+  e.preventDefault();
+
+  try {
+    const selectedDates = Array.from(document.querySelectorAll('.w-checkbox-input'))
+      .filter(checkbox => checkbox.checked)
+      .map(checkbox => checkbox.nextElementSibling.innerText)
+
+    const formData = {
+      first_name: e.target['first_name'] ? e.target['first_name'].value ?? null : null,
+      last_name: e.target['last_name'] ? e.target['last_name'].value ?? null : null,
+      tel: e.target['tel'] ? e.target['tel'].value ?? null : null,
+      address: e.target['address'] ? e.target['address'].value ?? null : null,
+      dates: selectedDates ? selectedDates : null,
+    };
+
+    await sendEmail(formData);
+    console.log(formData);
+
+    e.target.reset();
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+const sendEmail = async (formData) => {
+  // Define your email parameters
+  const templateParams = {
+    first_name: formData.first_name,
+    last_name: formData.last_name,
+    tel: formData.tel,
+    address: formData.address,
+    dates: formData.dates,
+  };
+
+  try {
+    // Send the email via EmailJS
+    await emailjs.send('service_cfecbbp', 'template_qpkpr8u', templateParams);
+  } catch (error) {
+    console.error('Error sending email:', error);
+  }
+};
