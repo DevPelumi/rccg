@@ -73,7 +73,7 @@ const sendEmail = async (formData) => {
 
   try {
     // Sending the email via EmailJS
-    await emailjs.send('service_cfecbbp', 'template_qpkpr8u', templateParams);
+    await emailjs.send('service_cfecbbp', 'template_qpkpr8u', templateParams); // ServiceId and TemplateId
   } catch (error) {
     console.error('Error sending email:', error);
   }
