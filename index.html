@@ -13,14 +13,16 @@
     <link href="images/favicon.png" rel="shortcut icon" type="image/x-icon" />
     <link href="images/app-icon.png" rel="apple-touch-icon" />
     <link href="css/style.css" rel="stylesheet" type="text/css" />
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"
+    ></script>
     <script type="text/javascript">
-      (function(){
-        emailjs.init('i59pKhw4x_6rU63UA'); // Initialize with your User ID
+      (function () {
+        emailjs.init("i59pKhw4x_6rU63UA"); // Initialize with your User ID
       })();
     </script>
-    <script type="text/javascript" src="js/script.js" />
-</head>
+  </head>
   <body class="body">
     <div class="hero-section">
       <div class="navbar">
@@ -393,42 +395,98 @@
           <div class="w-form">
             <form method="post" class="form" id="register-form">
               <div class="w-layout-blockcontainer container w-container">
-                <input type="text" placeholder="First name" name="first_name" maxlength="256" class="text-field-2 w-input" required />
-                <input type="text" placeholder="Last Name" name="last_name" maxlength="256" class="text-field w-input" required />
+                <input
+                  type="text"
+                  placeholder="First name"
+                  name="first_name"
+                  maxlength="256"
+                  class="text-field-2 w-input"
+                  required
+                />
+                <input
+                  type="text"
+                  placeholder="Last Name"
+                  name="last_name"
+                  maxlength="256"
+                  class="text-field w-input"
+                  required
+                />
               </div>
-              <input class="text-field w-input" maxlength="256" name="tel" placeholder="Phone Number" type="tel" required />
-              <label for="Phone-Number-2" class="field-label">Do you need a ride ? </label >
-              <input class="text-field w-input" maxlength="256" name="address" placeholder="House Address" type="text" />
+              <input
+                class="text-field w-input"
+                maxlength="256"
+                name="tel"
+                placeholder="Phone Number"
+                type="tel"
+                required
+              />
+              <label for="Phone-Number-2" class="field-label"
+                >Do you need a ride ?
+              </label>
+              <input
+                class="text-field w-input"
+                maxlength="256"
+                name="address"
+                placeholder="House Address"
+                type="text"
+              />
               <div class="div-block-2">
                 <label for="Phone-Number-3" class="field-label"
                   >What dates?</label
                 >
                 <div class="checkbox-wrap">
                   <label class="w-checkbox checkbox-field">
-                    <input type="checkbox" name="Thursday" class="w-checkbox-input checkbox" />
-                    <span class="checkbox-label w-form-label" for="checkbox-thursday">
+                    <input
+                      type="checkbox"
+                      name="Thursday"
+                      class="w-checkbox-input checkbox"
+                    />
+                    <span
+                      class="checkbox-label w-form-label"
+                      for="checkbox-thursday"
+                    >
                       Thursday, 10th October 2024
                     </span>
                   </label>
-                  
+
                   <label class="w-checkbox checkbox-field">
-                    <input type="checkbox" name="Friday" class="w-checkbox-input checkbox" />
-                    <span class="checkbox-label w-form-label" for="checkbox-friday">
+                    <input
+                      type="checkbox"
+                      name="Friday"
+                      class="w-checkbox-input checkbox"
+                    />
+                    <span
+                      class="checkbox-label w-form-label"
+                      for="checkbox-friday"
+                    >
                       Friday, 11th October 2024
                     </span>
                   </label>
-                
+
                   <label class="w-checkbox checkbox-field">
-                    <input type="checkbox" name="Saturday" class="w-checkbox-input checkbox"
+                    <input
+                      type="checkbox"
+                      name="Saturday"
+                      class="w-checkbox-input checkbox"
                     />
-                    <span class="checkbox-label w-form-label" for="checkbox-saturday">
+                    <span
+                      class="checkbox-label w-form-label"
+                      for="checkbox-saturday"
+                    >
                       Saturday, 12th October 2024
                     </span>
                   </label>
-                
+
                   <label class="w-checkbox checkbox-field">
-                    <input type="checkbox" name="Sunday" class="w-checkbox-input checkbox" />
-                    <span class="checkbox-label w-form-label" for="checkbox-sunday">
+                    <input
+                      type="checkbox"
+                      name="Sunday"
+                      class="w-checkbox-input checkbox"
+                    />
+                    <span
+                      class="checkbox-label w-form-label"
+                      for="checkbox-sunday"
+                    >
                       Sunday, 13th October 2024
                     </span>
                   </label>
@@ -461,7 +519,9 @@
       </div>
     </section>
     <script>
-      document.getElementById('register-form').addEventListener('submit', handleFormSubmit)
+      document
+        .getElementById("register-form")
+        .addEventListener("submit", handleFormSubmit);
     </script>
   </body>
 </html>
